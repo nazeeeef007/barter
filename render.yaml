@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: barter-backend
+    env: docker
+    rootDir: backend
+    plan: free
+    envVars:
+      - key: FIREBASE_SA_BASE64
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      # Add more as needed
