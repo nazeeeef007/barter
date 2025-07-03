@@ -3,7 +3,6 @@ package com.barter.backend.config;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
-import io.github.cdimascio.dotenv.Dotenv;
 import jakarta.annotation.PostConstruct;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,12 +16,10 @@ public class FirebaseInitializer {
     @PostConstruct
     public void init() {
         try {
-            // Load from .env file
-            Dotenv dotenv = Dotenv.load();
-            String base64ServiceAccount = dotenv.get("FIREBASE_SA_BASE64");
+            String base64ServiceAccount = System.getenv("FIREBASE_SA_BASE64");
 
             if (base64ServiceAccount == null || base64ServiceAccount.isEmpty()) {
-                throw new IllegalStateException("FIREBASE_SA_BASE64 is not set in .env");
+                throw new IllegalStateException("FIREBASE_SA_BASE64 environment variable is not set");
             }
 
             byte[] decodedBytes = Base64.getDecoder().decode(base64ServiceAccount);
