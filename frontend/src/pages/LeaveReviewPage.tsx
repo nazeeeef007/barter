@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { reviewApi } from '@/api/ReviewService';
-import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
@@ -10,7 +9,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { BarterPost } from '@/types/BarterPost';
-import type { UserProfile } from '@/types/UserProfile';
 import { useAuth } from '@/context/AuthContext';
 import axios from 'axios';
 

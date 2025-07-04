@@ -1,12 +1,10 @@
 // src/pages/ChatListPage.tsx
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { useAuth } from '@/context/AuthContext';
-import { chatApi } from '@/api/ChatService';
 import { ChatPreviewCard } from '@/components/chat/ChatPreviewCard';
 import type { ChatConversation } from '@/types/Chat';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Separator } from '@/components/ui/separator';
 import { toast } from 'sonner';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';

@@ -1,5 +1,6 @@
 // src/components/forms/SkillTagInput.tsx
-import React, { useState, useRef, KeyboardEvent, ChangeEvent } from 'react';
+import React, { useState, useRef } from 'react';
+import type { KeyboardEvent, ChangeEvent } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { X } from 'lucide-react'; // For the remove icon

@@ -1,5 +1,5 @@
 // src/pages/ChatRoomPage.tsx
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/context/AuthContext';
 import { chatApi } from '@/api/ChatService';
@@ -14,7 +14,7 @@ import { ArrowLeft } from 'lucide-react';
 import { toast } from 'sonner';
 
 // Import Firebase Firestore functions - ENSURE 'doc' IS IMPORTED HERE!
-import { getFirestore, collection, doc, query, where, orderBy, onSnapshot, addDoc, serverTimestamp } from 'firebase/firestore';
+import { getFirestore, collection, doc, query, orderBy, onSnapshot } from 'firebase/firestore';
 import { app } from '@/firebase'; // Assuming you export your Firebase app instance
 
 interface ChatRoomPageParams extends Record<string, string | undefined> {

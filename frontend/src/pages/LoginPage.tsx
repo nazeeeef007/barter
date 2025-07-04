@@ -1,5 +1,5 @@
 // src/pages/LoginPage.tsx
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth"; // <--- REMOVE FirebaseError FROM HERE
 import { FirebaseError } from "firebase/app"; // <--- ADD THIS IMPORT
@@ -16,8 +16,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-
 // For form validation with react-hook-form and zod
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";

@@ -1,5 +1,4 @@
 // src/components/pagination/Pagination.tsx
-import React from 'react';
 import {
   Pagination as ShadcnPagination,
   PaginationContent,

@@ -1,16 +1,12 @@
 // src/pages/BrowseListingsPage.tsx
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
-import { getAuth } from 'firebase/auth';
-import { auth } from '../firebase';
 import { useLocation } from 'react-router-dom';
 
 import { ListingCard } from '@/components/listings/ListingCard';
 import { SearchBar } from '@/components/search/SearchBar';
 import { FilterPanel } from '@/components/search/FilterPanel';
 import { Pagination } from '@/components/pagination/Pagination';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
 import { useAuth } from '../context/AuthContext';
 import type { BarterPost } from '@/types/BarterPost';
 const BASE_URL = import.meta.env.VITE_BASE_URL;

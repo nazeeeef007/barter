@@ -1,5 +1,4 @@
 // src/components/reputation/ReputationDisplay.tsx
-import React from 'react';
 import { StarIcon } from '@heroicons/react/24/solid'; // Example: using Heroicons, you'd install this library
 // Or use a custom SVG star icon if you don't want to add another library
 
