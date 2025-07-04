@@ -1,6 +1,6 @@
 // src/pages/LoginPage.tsx
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth"; // <--- REMOVE FirebaseError FROM HERE
 import { FirebaseError } from "firebase/app"; // <--- ADD THIS IMPORT
 import { auth as firebaseAuth } from "../firebase"; // Import the auth instance
@@ -38,7 +38,6 @@ const loginSchema = z.object({
 type LoginFormValues = z.infer<typeof loginSchema>;
 
 function LoginPage() {
-  const navigate = useNavigate();
   const [error, setError] = useState<string | null>(null); // State for Firebase errors
   const [isSubmitting, setIsSubmitting] = useState(false); // For loading state on button
 

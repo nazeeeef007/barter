@@ -27,7 +27,20 @@ export function ChatPreviewCard({ chat, currentUserId }: ChatPreviewCardProps) {
                         setOtherParticipant(userProfile);
                     } catch (error) {
                         console.error("Failed to fetch other participant profile:", error);
-                        setOtherParticipant({ uid: otherUid, displayName: 'Unknown User', profileImageUrl: '' } as UserProfile);
+                        setOtherParticipant({
+                            id: otherUid,
+                            firebaseUid: otherUid,
+                            displayName: 'Unknown User',
+                            email: '',
+                            location: '',
+                            bio: '',
+                            skillsOffered: [],
+                            needs: [],
+                            rating: 0,
+                            profileImageUrl: '',
+                            createdAt: new Date().toISOString(),
+                            });
+
                     } finally {
                         setIsLoadingParticipant(false);
                     }

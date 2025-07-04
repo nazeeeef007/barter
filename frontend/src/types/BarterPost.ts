@@ -12,7 +12,7 @@ export interface BarterPost {
   type: string;
   tags: string[];
   preferredExchange: string;
-  imageUrl: string;
+  imageUrl?: string | null;
   location: string;
   availability: AvailabilityRange[];
   status: string;

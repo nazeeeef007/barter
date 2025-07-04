@@ -263,10 +263,12 @@ export default function EditPostPage() {
             }
 
             // Set form values with fetched data
+            const postType = (fetchedPost.type === 'offer' || fetchedPost.type === 'request') ? fetchedPost.type : 'offer';
+
             reset({
                 title: fetchedPost.title || '',
                 description: fetchedPost.description || '',
-                type: fetchedPost.type,
+                type: postType,
                 skills: fetchedPost.tags || [],
                 preferredExchange: fetchedPost.preferredExchange || '',
                 location: fetchedPost.location || '',
@@ -274,9 +276,9 @@ export default function EditPostPage() {
                     start: new Date(a.start),
                     end: new Date(a.end)
                 })) || [],
-                imageUrl: fetchedPost.imageUrl || null, // Set existing image URL
-                newImageFile: null, // Ensure new image file is null initially
-                status: fetchedPost.status,
+                imageUrl: fetchedPost.imageUrl || null,
+                newImageFile: null,
+                status: (fetchedPost.status === 'open' || fetchedPost.status === 'closed') ? fetchedPost.status : 'open',
             });
 
         } catch (err) {

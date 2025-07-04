@@ -2,10 +2,10 @@
 import {
   createContext,
   useContext,
-  ReactNode,
   useEffect,
   useState,
 } from "react";
+import type { ReactNode } from "react";
 import { onAuthStateChanged, signOut as firebaseSignOut } from "firebase/auth";
 import { auth as firebaseAuth } from "../firebase";
 import axios from "axios";

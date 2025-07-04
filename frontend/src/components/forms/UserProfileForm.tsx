@@ -205,9 +205,10 @@ export const UserProfileForm: React.FC<UserProfileFormProps> = ({
                             </FormControl>
                         </div>
                     </div>
-                    {form.formState.errors.profileImageFile && (
-                        <FormMessage>{form.formState.errors.profileImageFile.message}</FormMessage>
+                    {typeof form.formState.errors.profileImageFile?.message === 'string' && (
+                    <FormMessage>{form.formState.errors.profileImageFile.message}</FormMessage>
                     )}
+
                 </FormItem>
 
                 <FormField
@@ -246,6 +247,7 @@ export const UserProfileForm: React.FC<UserProfileFormProps> = ({
                             <FormLabel>Skills You Offer</FormLabel>
                             <FormControl>
                                 <SkillTagInput
+                                    label="Skills You Offer"
                                     value={field.value}
                                     onChange={field.onChange}
                                     placeholder="e.g., Web Development, Guitar Lessons"
@@ -265,6 +267,7 @@ export const UserProfileForm: React.FC<UserProfileFormProps> = ({
                             <FormLabel>Skills/Items You Need</FormLabel>
                             <FormControl>
                                 <SkillTagInput
+                                    label="Skills/Items You Need"
                                     value={field.value}
                                     onChange={field.onChange}
                                     placeholder="e.g., Photography Services, Gardening Tools"

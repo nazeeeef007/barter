@@ -23,11 +23,17 @@ function HomePage() {
         try {
             await signOut(firebaseAuth);
             navigate("/login");
-        } catch (error) {
+        } catch (error: unknown) {
+            if (error instanceof Error) {
             console.error("Error signing out:", error.message);
             alert("Failed to sign out: " + error.message);
+            } else {
+            console.error("Error signing out:", error);
+            alert("Failed to sign out");
+            }
         }
-    };
+        };
+
 
     return (
         <div className="min-h-screen bg-slate-50 text-slate-900">
