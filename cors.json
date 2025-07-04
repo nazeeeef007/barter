@@ -1,6 +1,9 @@
 [
   {
-    "origin": ["http://localhost:5173"],
+    "origin": [
+      "http://localhost:5173",
+      "https://barter2.netlify.app"
+    ],
     "method": ["GET", "POST", "PUT", "DELETE"],
     "maxAgeSeconds": 3600,
     "responseHeader": ["Content-Type", "Authorization"]
